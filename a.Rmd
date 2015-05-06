@@ -1,10 +1,60 @@
+---
+title: "Jeff's Analysis, 5/15"
+output:
+  html_document:
+  theme: united
+---
+
+Alright here is some start up to load the Bayes factors.
+```{r,message=FALSE,warning=FALSE}
 library('BayesFactor')
+if (!file.exists('bf.RData')) source('doBf.R')
+
 load('bf.RData')
 ans8=bf[[1]]
 ans9=bf[[2]]
 ansDif=bf[[3]]
+```
 
-top8=head(ans8,14)
+# frac8 for eigth graders
+
+Let's look at the top 20 models
+```{r}
+head(ans8,20)/head(ans8)[1]
+```
+
+The best model is *IQ1 + WNL1 + frac_cpt7 + math7*, which is only slightly better (1-to-.94) than *IQ1 + frac_cpt7 + math7*, the best 3-covariate model.  The difference shows that *WLN1* is not strictly needed if *IQ1* is included.  The two other plausible three-covariate competitors are *WNL1 + frac_cpt7 + math7* and *frac_cpt7 + math7 + ef5*, which are 1-to-.65 and 1-to-.47 within the best model. These last two fits show that *IQ1* is not strictly needed as well and may be replaced with *WLN1* or even *ef5*. 
+
+Here is grist for the table:
+
+Best 4:   
+IQ1 + WNL1 + frac_cpt7 + math7                    : 1   
+
+Best 3:  
+IQ1 + frac_cpt7 + math7                           : 0.941645  
+WNL1 + frac_cpt7 + math7                          : 0.6527834  
+frac_cpt7 + math7 + ef5                           : 0.4709651  
+
+The common factors are *frac_cpt7* and *math7*.  Are they necessary?
+
+```{r}
+best3=(names(ans8@numerator)=="IQ1 + frac_cpt7 + math7")
+b3wofrac_cpt7=(names(ans8@numerator)=="IQ1 + math7")
+b3womath7=(names(ans8@numerator)=="IQ1 + frac_cpt7")
+ans8[best3]/ans8[b3wofrac_cpt7]
+ans8[best3]/ans8[b3womath7]
+```
+
+Are they sufficient?
+```{r}
+myTwo=(names(ans8@numerator)=="frac_cpt7 + math7")
+ans8[best3]/ans8[b3wofrac_cpt7]
+```
+
+# Ignore After Here
+
+
+
 top9=head(ans9,35) 
 topDif=head(ansDif,4) 
 prior9 = newPriorOdds(top9, type = "equal")
