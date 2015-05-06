@@ -141,29 +141,151 @@ ans8[best3]/ans8[myTwo]</code></pre>
 ## ---
 ## Bayes factor type: BFlinearModel, JZS</code></pre>
 </div>
-<div id="ignore-after-here" class="section level1">
-<h1>Ignore After Here</h1>
-<p>top9=head(ans9,35) topDif=head(ansDif,4) prior9 = newPriorOdds(top9, type = “equal”) post9 = prior9 * top9 post.prob9 = as.BFprobability(post9)</p>
-<p>extractBF(top9/top9[1])[,1:2]</p>
+<div id="ninth-grade-analysis" class="section level1">
+<h1>Ninth Grade Analysis</h1>
+<pre class="r"><code>head(ans9,35) /head(ans9)[1]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1                   : 1         ±0%
+## [2] IQ1 + WNL6 + frac_cpt7 + ef5 + numset1                     : 0.8912493 ±0%
+## [3] IQ1 + WNL1 + WNL6 + frac_add7 + frac_cpt7 + ef5            : 0.7978485 ±0%
+## [4] IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef5                   : 0.7964367 ±0%
+## [5] IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef5 + numset1         : 0.7527728 ±0%
+## [6] IQ1 + WNL1 + WNL6 + frac_cpt7 + math7                      : 0.6637877 ±0%
+## [7] IQ1 + WNL1 + WNL6 + frac_add7 + frac_cpt7 + ef1            : 0.6420906 ±0%
+## [8] WNL1 + WNL6 + frac_cpt7 + math7 + ef5                      : 0.6028195 ±0%
+## [9] IQ1 + WNL1 + WNL6 + frac_cpt7 + math7 + ef5                : 0.582465  ±0%
+## [10] WNL6 + frac_cpt7 + math7 + ef5 + numset1                  : 0.5716441 ±0%
+## [11] IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 + numset1        : 0.5359329 ±0%
+## [12] IQ1 + WNL6 + frac_cpt7 + math7 + ef5 + numset1            : 0.5175186 ±0%
+## [13] IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 + ef5            : 0.5108425 ±0%
+## [14] IQ1 + WNL6 + frac_cpt7 + math7 + numset1                  : 0.4920271 ±0%
+## [15] WNL6 + frac_cpt7 + ef5 + numset1                          : 0.4648663 ±0%
+## [16] WNL6 + frac_add7 + frac_cpt7 + ef5 + numset1              : 0.453675  ±0%
+## [17] IQ1 + attn3 + WNL1 + WNL6 + frac_add7 + frac_cpt7         : 0.4357812 ±0%
+## [18] IQ1 + WNL1 + WNL6 + frac_cpt7 + ef5 + numset1             : 0.4177928 ±0%
+## [19] IQ1 + attn3 + WNL6 + frac_cpt7 + numset1                  : 0.4082975 ±0%
+## [20] IQ1 + WNL1 + WNL6 + frac_add7 + frac_cpt7                 : 0.3972891 ±0%
+## [21] IQ1 + WNL6 + frac_cpt7 + numset1                          : 0.3909489 ±0%
+## [22] IQ1 + WNL6 + frac_cpt7 + math7 + ef5                      : 0.3906523 ±0%
+## [23] WNL1 + WNL6 + frac_cpt7 + math7                           : 0.3901336 ±0%
+## [24] IQ1 + WNL1 + WNL6 + frac_cpt7 + ef5                       : 0.3876734 ±0%
+## [25] IQ1 + WNL6 + frac_add7 + frac_cpt7 + numset1              : 0.3731899 ±0%
+## [26] IQ1 + WNL6 + frac_add7 + frac_cpt7 + math7 + ef1          : 0.3725605 ±0%
+## [27] IQ1 + WNL1 + WNL6 + frac_add7 + frac_cpt7 + math7         : 0.3711083 ±0%
+## [28] IQ1 + WNL1 + WNL6 + frac_add7 + frac_cpt7 + math7 + ef5   : 0.3673331 ±0%
+## [29] IQ1 + WNL6 + frac_add7 + frac_cpt7 + math7 + ef5          : 0.3672056 ±0%
+## [30] WNL1 + WNL6 + frac_cpt7 + math7 + ef5 + numset1           : 0.3669061 ±0%
+## [31] IQ1 + attn3 + WNL1 + WNL6 + frac_cpt7 + math7             : 0.3634905 ±0%
+## [32] WNL1 + WNL6 + frac_add7 + frac_cpt7 + math7 + ef5         : 0.3616319 ±0%
+## [33] IQ1 + WNL6 + frac_cpt7 + ef1 + numset1                    : 0.3597947 ±0%
+## [34] WNL1 + WNL6 + frac_add7 + frac_cpt7 + ef5                 : 0.3534713 ±0%
+## [35] IQ1 + WNL1 + WNL6 + frac_add7 + frac_cpt7 + ef5 + numset1 : 0.3426709 ±0%
+## 
+## Against denominator:
+##   frac9 ~ IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
+<p>Here are the best 5-covariate models:</p>
+<pre><code>IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1                  1.0000000  
+IQ1 + WNL6 + frac_cpt7 + ef5 + numset1                    0.8912493  
+IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef5                  0.7964367  
+IQ1 + WNL1 + WNL6 + frac_cpt7 + math7                     0.6637877  
+WNL1 + WNL6 + frac_cpt7 + math7 + ef5                     0.6028195  
+WNL6 + frac_cpt7 + math7 + ef5 + numset1                  0.5716441  
+IQ1 + WNL6 + frac_cpt7 + math7 + numset1                  0.4920271  </code></pre>
+<p>and the best 4-covariate models</p>
+<pre><code>WNL6 + frac_cpt7 + ef5 + numset1                          0.4648663 2.938088e-05
+IQ1 + WNL6 + frac_cpt7 + numset1                          0.3909489 2.961897e-05
+WNL1 + WNL6 + frac_cpt7 + math7                           0.3901336 2.962251e-05</code></pre>
+<p>So, scanning these, it seems that <em>frac_cpt7</em> and <em>WNL6</em> are needed.</p>
+<p>Necessity of <em>WNL6</em>?</p>
+<pre class="r"><code>best5=(names(ans9@numerator)==&quot;IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1&quot;)
+best4=(names(ans9@numerator)==&quot;WNL6 + frac_cpt7 + ef5 + numset1&quot;)
+
+b5woWNL6=(names(ans9@numerator)==&quot;IQ1 + frac_add7 + frac_cpt7 + ef1&quot;)
+b4woWNL6=(names(ans9@numerator)==&quot;frac_cpt7 + ef5 + numset1&quot;)
+ans9[b5woWNL6]/ans9[best5]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] IQ1 + frac_add7 + frac_cpt7 + ef1 : 0.00578347 ±0%
+## 
+## Against denominator:
+##   frac9 ~ IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
+<pre class="r"><code>ans9[b4woWNL6]/ans9[best4]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] frac_cpt7 + ef5 + numset1 : 0.009965673 ±0%
+## 
+## Against denominator:
+##   frac9 ~ WNL6 + frac_cpt7 + ef5 + numset1 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
+<p>Necessity of <em>frac_cpt7</em>?</p>
+<pre class="r"><code>b5wofrac_cpt7=(names(ans9@numerator)==&quot;IQ1 + WNL6 + frac_add7 + ef1&quot;)
+b4wofrac_cpt7=(names(ans9@numerator)==&quot;WNL6 + ef5 + numset1&quot;)
+ans9[b5wofrac_cpt7]/ans9[best5]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] IQ1 + WNL6 + frac_add7 + ef1 : 0.006779685 ±0%
+## 
+## Against denominator:
+##   frac9 ~ IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
+<pre class="r"><code>ans9[b4wofrac_cpt7]/ans9[best4]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] WNL6 + ef5 + numset1 : 0.002020491 ±0%
+## 
+## Against denominator:
+##   frac9 ~ WNL6 + frac_cpt7 + ef5 + numset1 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
+<p>How sufficent are the top2?</p>
+<pre class="r"><code>top2=(names(ans9@numerator)==&quot;WNL6 + frac_cpt7&quot;)
+ans9[top2]/ans9[best5]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] WNL6 + frac_cpt7 : 9.803793e-05 ±0%
+## 
+## Against denominator:
+##   frac9 ~ IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
 </div>
-<div id="best-5" class="section level1">
-<h1>best 5</h1>
-<p>IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1 1.0000000 0.000000e+00 IQ1 + WNL6 + frac_cpt7 + ef5 + numset1 0.8912493 4.900876e-08 IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef5 0.7964367 4.780000e-08 IQ1 + WNL1 + WNL6 + frac_cpt7 + math7 0.6637877 4.604925e-08 WNL1 + WNL6 + frac_cpt7 + math7 + ef5 0.6028195 4.521898e-08 WNL6 + frac_cpt7 + math7 + ef5 + numset1 0.5716441 4.478772e-08 IQ1 + WNL6 + frac_cpt7 + math7 + numset1 0.4920271 4.366432e-08 —————————</p>
+<div id="difference" class="section level1">
+<h1>Difference</h1>
+<p>Let’s look at the top 10 models</p>
+<pre class="r"><code>head(ansDif,10)/head(ansDif)[1]</code></pre>
+<pre><code>## Bayes factor analysis
+## --------------
+## [1] WNL6                   : 1         ±0%
+## [2] WNL6 + math7           : 0.8970456 ±0%
+## [3] WNL6 + math7 + numset1 : 0.4100424 ±0%
+## [4] WNL6 + math7 + ef1     : 0.3467247 ±0%
+## [5] WNL6 + frac_add7       : 0.3274905 ±0%
+## [6] WNL6 + numset6         : 0.3259708 ±0%
+## [7] WNL6 + frac_cpt7       : 0.3108736 ±0%
+## [8] IQ1 + WNL6             : 0.295662  ±0%
+## [9] age8 + WNL6 + math7    : 0.2798508 ±0%
+## [10] attn3 + WNL6 + math7  : 0.2703711 ±0%
+## 
+## Against denominator:
+##   dif ~ WNL6 
+## ---
+## Bayes factor type: BFlinearModel, JZS</code></pre>
+<p>Clearly, we prefer the one-difference model as the most parsimonious.</p>
 </div>
-<div id="best-4" class="section level1">
-<h1>best 4</h1>
-<p>WNL6 + frac_cpt7 + ef5 + numset1 0.4648663 2.938088e-05 IQ1 + WNL6 + frac_cpt7 + numset1 0.3909489 2.961897e-05 WNL1 + WNL6 + frac_cpt7 + math7 0.3901336 2.962251e-05</p>
-<p>OK, so it seems that frac_cpt7 and WNL6 are needed. Yi, how bad is the best 5 and the best 4 minus each of these?</p>
-<p>frac_cpt7</p>
-<p>best5=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“IQ1 + WNL6 + frac_add7 + frac_cpt7 + ef1”) best4=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“WNL6 + frac_cpt7 + ef5 + numset1”)</p>
-<p>b5wWNL6=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“IQ1 + frac_add7 + frac_cpt7 + ef1”) b5wfrac_cpt7=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“IQ1 + WNL6 + frac_add7 + ef1”) b4wWNL6=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“frac_cpt7 + ef5 + numset1”) b4wfrac_cpt7=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“WNL6 + ef5 + numset1”)</p>
-</div>
-<div id="we-have-a-great-story" class="section level1">
-<h1>we have a great story!</h1>
-<p>ans9[b5wWNL6]/ans9[best5] ans9[b4wWNL6]/ans9[best4] ans9[b5wfrac_cpt7]/ans9[best5] ans9[b4wfrac_cpt7]/ans9[best4]</p>
-<p>top2=(names(<a href="mailto:ans9@numerator">ans9@numerator</a>)==“WNL6 + frac_cpt7”) ans9[top2]/ans9[best5]</p>
-<hr />
-<p>Improvements for Richard— a. add numbers of covariates b. add prior odds weight by covariates c. add averaging by covariate (dont ave models less than x from top)</p>
+<div id="improvements-needed-in-package-sooner-or-later" class="section level1">
+<h1>Improvements needed in package sooner or later</h1>
+<ul>
+<li>add numbers of covariates</li>
+<li>add prior odds weight by covariates</li>
+<li>add averaging by covariate (dont ave models less than x from top)</li>
+</ul>
 </div>
 
 
