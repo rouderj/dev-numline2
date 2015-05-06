@@ -131,13 +131,13 @@ ans8[best3]/ans8[b3wofrac_cpt7]</code></pre>
 ## Bayes factor type: BFlinearModel, JZS</code></pre>
 <p>Are they sufficient?</p>
 <pre class="r"><code>myTwo=(names(ans8@numerator)==&quot;frac_cpt7 + math7&quot;)
-ans8[best3]/ans8[b3wofrac_cpt7]</code></pre>
+ans8[best3]/ans8[myTwo]</code></pre>
 <pre><code>## Bayes factor analysis
 ## --------------
-## [1] IQ1 + frac_cpt7 + math7 : 1783.54 ±0%
+## [1] IQ1 + frac_cpt7 + math7 : 3.237461 ±0.01%
 ## 
 ## Against denominator:
-##   frac8 ~ IQ1 + math7 
+##   frac8 ~ frac_cpt7 + math7 
 ## ---
 ## Bayes factor type: BFlinearModel, JZS</code></pre>
 </div>

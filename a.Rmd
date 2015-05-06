@@ -48,7 +48,7 @@ ans8[best3]/ans8[b3womath7]
 Are they sufficient?
 ```{r}
 myTwo=(names(ans8@numerator)=="frac_cpt7 + math7")
-ans8[best3]/ans8[b3wofrac_cpt7]
+ans8[best3]/ans8[myTwo]
 ```
 
 # Ignore After Here
